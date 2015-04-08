@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Coin Counter</title>
+  </head>
+  <body>
+    <div class ="container">
+        <h1>Coin Counter</h1>
+    <form id='coincounter'>
+        <div class='form-group'>
+            <label name='amount'>Enter your total amount of change</label>
+            <input id='amount' name='amount' type='number'>
+            <label name ="amount2"> Enter the second amount</label>
+            <input id='amount2' name='amount2' type='number'>
+        </div>
+        <button type = "submit" class ="btn btn-danger">Go!</button>
+     </form>
+         <div id='result'>
+             <h3>Amount 1 results:</h3>
+             <p>Pennies Total:<span class='penniesTotal'></span></p>
+             <p>Nickels Total:<span class='nickelsTotal'></span></p>
+             <p>Dimes Total:<span class='dimesTotal'></span></p>
+             <p>Quarters Total:<span class='quartersTotal'></span></p>
+             <br>
+             <h3>Amount 2 results:</h3>
+             <p>Pennies Total:<span class='penniesTotal2'></span></p>
+             <p>Nickels Total:<span class='nickelsTotal2'></span></p>
+             <p>Dimes Total:<span class='dimesTotal2'></span></p>
+             <p>Quarters Total:<span class='quartersTotal2'></span></p>
+        </div>
+    </div>
+  </body>
+</html>
