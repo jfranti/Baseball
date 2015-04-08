@@ -15,5 +15,10 @@ describe('roman', function(){
     it("it counts 2545 as a MMDXXXXV", function(){
         expect(roman(2545)).to.equal('MMDXXXXV');
     });
-
+    it("it counts 4 as a IV", function(){
+        expect(roman(4)).to.equal('IV');
+    });
+    it("it counts 9 as a IX", function(){
+        expect(roman(9)).to.equal('IX');
+    });
 });
