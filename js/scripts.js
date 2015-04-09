@@ -7,6 +7,7 @@ var pitch = function(choice) {
     var outs = 0;
     var runs = 0;
     var base = 0;
+    var pitchcount = [balls, strikes];
 
 //Pitches and Outcomes
         if (pitches === 0) {
@@ -56,25 +57,23 @@ var pitch = function(choice) {
         }
         return call;
         console.log(call);
-    };
 
-// //Balls and Strikes
-//     for(var c in call) {
-//         if (c === 6) {
-//             strikes++;
-//         } else if (c === 5) {
-//             ball++;
-//         } else if (c === 4) {
-//             base++;
-//         } else if (c === 3) {
-//             base = base + 2;
-//         } else if (c === 2) {
-//             base = base + 4;
-//         } else if (c === 1) {
-//             base = base + 3;
-//         } else if (c === 0) {
-//             base = base++;
-//         }
-//     }
-//     return
-// };
+//Balls and Strikes
+        if (call === 6) {
+            strikes++;
+        } else if (call === 5) {
+            ball++;
+        } else if (call === 4) {
+            base++;
+        } else if (call === 3) {
+            base = base + 2;
+        } else if (call === 2) {
+            base = base + 4;
+        } else if (call === 1) {
+            base = base + 3;
+        } else if (call === 0) {
+            base = base++;
+        }
+        return pitchcount;
+        console.log(pitchcount);
+    };
