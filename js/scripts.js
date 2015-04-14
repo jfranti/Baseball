@@ -10,49 +10,55 @@ var pitch = function(choice) {
     var pitchcount = [balls, strikes];
 
 //Pitches and Outcomes
-        if (pitches === 0) {
-            if (random < 0.01) {
+        if (pitches === 0) { //pitch outside
+            if (random < 0.039) { //SINGLE
                 var call = 1;
-            } else if (random < 0.04) {
+            } else if (random < 0.051) { //DOUBLE
                 var call = 2;
-            } else if (random < 0.08) {
+            } else if (random < 0.054) { //TRIPLE
                 var call = 3;
-            } else if (random < 0.13) {
+            } else if (random < 0.060) { //HR
                 var call = 4;
-            } else if (random < 0.48) {
+            } else if (random < 0.42) { //BALL
                 var call = 5;
-            } else {
+            } else if (random < 0.87) { //STRIKE
                 var call = 6;
+            } else { //FLY or GROUND-OUT
+                var call = 7;
             }
         }
-        else if (pitches === 1) {
-            if (random < 0.02) {
+        else if (pitches === 1) { //pitch middle
+            if (random < 0.049) { //SINGLE
                 var call = 1;
-            } else if (random < 0.07) {
+            } else if (random < 0.071) { //DOUBLE
                 var call = 2;
-            } else if (random < 0.17) {
+            } else if (random < 0.079) { //TRIPLE
                 var call = 3;
-            } else if (random < 0.32) {
+            } else if (random < 0.080) { //HR
                 var call = 4;
-            } else {
+            } else if (random < 0.645) { //STRIKE
                 var call = 6;
+            } else { //FLY or GROUND-OUT
+                var call = 7;
             }
         }
-        else if (pitches === 2) {
-            if (random < 0.01) {
+        else if (pitches === 2) { //pitch inside
+            if (random < 0.01) { //HBP
                 var call = 0;
-            } else if (random < 0.02) {
+            } else if (random < 0.049) { //SINGLE
                 var call = 1;
-            } else if (random < 0.05) {
+            } else if (random < 0.061) { //DOUBLE
                 var call = 2;
-            } else if (random < 0.09) {
+            } else if (random < 0.064) { //TRIPLE
                 var call = 3;
-            } else if (random < 0.14) {
+            } else if (random < 0.070) { //HR
                 var call = 4;
-            } else if (random < 0.50) {
+            } else if (random < 0.41) { //BALL
                 var call = 5;
-            } else {
+            } else if (random < 0.87) { //STRIKE
                 var call = 6;
+            } else { //FLY or GROUND-OUT
+                var call = 7;
             }
         }
         return call;
