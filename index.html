@@ -5,21 +5,21 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.2.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Scrabble Scores</title>
+    <title>Pitch Game</title>
   </head>
   <body>
       <center>
     <div class ="container">
-    <form id='word'>
+    <form id='outside'>
         <div class="form-group">
-            <label id='word'>Enter a word:</label>
-            <input id='word' name='word' type='text'>
+            <button type='submit' class='btn btn-success'>Pitch Outside</button>
+            <button type='submit' class='btn btn-success'>Pitch Middle</button>
+            <button type='submit' class='btn btn-success'>Pitch Inside</button>
+
         </div>
-        <button type='submit' class='btn btn-success'>Submit</button>
     </form>
-    </div>
         <div id='result'>
-            <p>Your word is worth <span class='total_score'></span> points.</p>
+            <p><span class='call'></span>!</p>
         </div>
     </center>
   </body>

@@ -62,24 +62,19 @@ var pitch = function(choice) {
             }
         }
         return call;
+        debugger;
         console.log(call);
-
-//Balls and Strikes
-        if (call === 6) {
-            strikes++;
-        } else if (call === 5) {
-            ball++;
-        } else if (call === 4) {
-            base++;
-        } else if (call === 3) {
-            base = base + 2;
-        } else if (call === 2) {
-            base = base + 4;
-        } else if (call === 1) {
-            base = base + 3;
-        } else if (call === 0) {
-            base = base++;
-        }
-        return pitchcount;
-        console.log(pitchcount);
     };
+
+
+$(document).ready(function() {
+  $('form#outside').submit(function(event) {
+      var call = pitch(choice);
+
+
+      $('.call').text(call);
+
+    $('#result').show();
+    event.preventDefault();
+  });
+});
