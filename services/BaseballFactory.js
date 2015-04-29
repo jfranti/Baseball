@@ -31,7 +31,7 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
     }
 
     factory.out = function() {
-        
+
     }
 
     factory.single = function() {
@@ -54,5 +54,4 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
 
     }
 
-    fact
 });
