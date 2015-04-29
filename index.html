@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="baseball">
   <head>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>Pitch Game</title>
     <script src="js/jquery-1.11.2.js"></script>
     <script src="js/scripts.js"></script>
     <script src="lib/angular.js"></script>
@@ -11,11 +10,14 @@
     <script src="services/BaseballFactory.js"></script>
     <script src="controllers/ScoreboardController.js"></script>
     <script src="controllers/PitchController.js"></script>
-    <title>Pitch Game</title>
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
    </head>
 
   <body>
       <div ui-view="scoreboard"></div>
       <div ui-view="home"></div>
+      <div ui-view="report"></div>
   </body>
 </html>

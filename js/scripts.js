@@ -1,6 +1,6 @@
 var pitch = function(choice) {
     var pitches = choice;
-    var result, random = Math.random();
+    var random = Math.random();
     var call = 0;
     var balls = 0;
     var strikes = 0;
@@ -62,8 +62,6 @@ var pitch = function(choice) {
             }
         }
         return call;
-        debugger;
-        console.log(call);
     };
 
 
