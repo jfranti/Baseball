@@ -3,12 +3,12 @@
 }
 
 body {
-  -webkit-background-size: cover;
+  /*-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color:rgba(0, 0, 0, 0.1)
+  background-repeat: no-repeat;*/
+  background-image: url('http://7-themes.com/6797738-hd-baseball-field-wallpaper.html');
 }
 
 button {
