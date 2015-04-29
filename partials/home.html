@@ -1,8 +1,8 @@
 <div class ="container text-center">
   <div class="form-group">
-      <button style="height:300px;width:75px;background-color:rgba(255,255,255,0);" ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)">Pitch Inside</button>
-      <button style="height:300px;width:75px;background-color:rgba(255,255,255,0);" ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)">Pitch Middle</button>
-      <button style="height:300px;width:75px;background-color:rgba(255,255,255,0);" ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)">Pitch Outside</button>
+      <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)">Pitch Outside</button>
+      <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)">Pitch Middle</button>
+      <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)">Pitch Inside</button>
       <p ng-show="BaseballFactory.gameover">
         GAME OVER.
       </p>
