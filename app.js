@@ -2,15 +2,16 @@ var baseball = angular.module('baseball', ['ui.router']);
 
 baseball.config(function($stateProvider) {
 
-  $stateProvider.state('start', {
+  $stateProvider.state('home', {
     url: '',
     views: {
       'scoreboard': {
-        templateUrl: 'partials/scoreboard.html'
+        templateUrl: 'partials/scoreboard.html',
+        controller: 'ScoreboardCtrl'
       },
       'home': {
         templateUrl: 'partials/home.html',
-        controller: 'BaseballCtrl'
+        controller: 'PitchCtrl'
       }
     }
   });

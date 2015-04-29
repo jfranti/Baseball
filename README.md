@@ -5,8 +5,8 @@ John Franti, Geoff WInner
 April 9, 2015<br />
 
 ###Description
-Scrabble Score
-Allows users to check Scrabble scores.
+Baseball
+Allows users to play baseball.
 
 ###Copyright (c) 2015 John Franti, Geoff Winner
 
