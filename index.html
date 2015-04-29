@@ -6,21 +6,12 @@
     <script src="js/jquery-1.11.2.js"></script>
     <script src="js/scripts.js"></script>
     <title>Pitch Game</title>
-  </head>
-  <body>
-      <center>
-    <div class ="container">
-    <form id='outside'>
-        <div class="form-group">
-            <button type='submit' class='btn btn-success'>Pitch Outside</button>
-            <button type='submit' class='btn btn-success'>Pitch Middle</button>
-            <button type='submit' class='btn btn-success'>Pitch Inside</button>
+   </head>
 
-        </div>
-    </form>
-        <div id='result'>
-            <p><span class='call'></span>!</p>
-        </div>
-    </center>
+  <body>
+      <div ui-view="scoreboard"></div>
+      <div ui-view="home"></div>
   </body>
+
+
 </html>
