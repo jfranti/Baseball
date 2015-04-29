@@ -3,17 +3,15 @@
 }
 
 body {
-  color: white;
   -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-background-repeat: no-repeat;
-  background-image: url("http://brentmayne.com/wp-content/uploads/2010/09/dodgers00511.jpg");
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color:rgba(0, 0, 0, 0.1)
 }
 
 button {
-  color: white;
   height:300px;
   width:75px;
   background-color:rgba(255, 255, 255, 0);

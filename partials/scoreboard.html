@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <p>
     RUNS: {{ BaseballFactory.runs }}
   </p>
@@ -24,4 +24,40 @@
   <p class="text-center">
     0
   </p>
+</div> -->
+<div class='container-fluid'>
+<div class="wrapper">
+  <div class="push"></div>
 </div>
+  <div class='footer'>
+    <table class='table-responsive'>
+      <table class='table table-striped'>
+        <thead>
+          <tr>
+            <th>Team<th>
+            <th>Runs</th>
+            <th>Hits</th>
+            <th>Balls</th>
+            <th>Strikes</th>
+            <th>Outs</th>
+            <th>Inning</th>
+            <th>Strikeouts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope='row'>{{ BaseballFactory.hometeam }}</td>
+              <td></td>
+              <td> {{ BaseballFactory.runs }} </td>
+              <td> {{ BaseballFactory.hits }} </td>
+              <td> {{ BaseballFactory.balls }} </td>
+              <td> {{ BaseballFactory.strikes }} </td>
+              <td> {{ BaseballFactory.outs }} </td>
+              <td> {{ BaseballFactory.innings }} </td>
+              <td> {{ BaseballFactory.strikeouts }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </table>
+    </div>
+  </div>

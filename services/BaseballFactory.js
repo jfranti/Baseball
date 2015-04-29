@@ -9,6 +9,7 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
     factory.innings = 1;
     factory.hits = 0;
     factory.strikeouts = 0;
+    factory.hometeam = "Brewers";
 
 //BASES
     factory.firstbase = 0;
