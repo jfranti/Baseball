@@ -2,21 +2,30 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
   $scope.BaseballFactory = BaseballFactory;
 
   $scope.newgame = function() {
-    BaseballFactory.strikes = 0;
-    BaseballFactory.balls = 0;
-    BaseballFactory.outs = 0;
-    BaseballFactory.runs = 0;
-    BaseballFactory.innings = 1;
-    BaseballFactory.hits = 0;
-    BaseballFactory.strikeouts = 0;
-    BaseballFactory.firstbase = 0;
-    BaseballFactory.secondbase = 0;
-    BaseballFactory.thirdbase = 0;
-    BaseballFactory.report = "";
-    BaseballFactory.gameover = 0;
-    BaseballFactory.home_pitchcount = 0;
-    BaseballFactory.away_pitchcount = 0;
-
+    factory.strikes = 0;
+    factory.balls = 0;
+    factory.outs = 0;
+    factory.runs_hometeam = 0;
+    factory.runs_awayteam = 0;
+    factory.innings = 1;
+    factory.hits_hometeam = 0;
+    factory.hits_awayteam = 0;
+    factory.strikeouts_hometeam = 0;
+    factory.strikeouts_awayteam = 0;
+    factory.inningouts = 0;
+    factory.home_pitchcount = 0;
+    factory.away_pitchcount = 0;
+    factory.emptybase = 1;
+    factory.firstbase = 0;
+    factory.secondbase = 0;
+    factory.thirdbase = 0;
+    factory.firstsecondbase = 0;
+    factory.secondthirdbase = 0;
+    factory.firstthirdbase = 0;
+    factory.firstsecondthirdbase = 0;
+    factory.report = "PLAY BALL!";
+    factory.gameover = 0;
+    factory.atbat = "AWAY";
   }
 
   $scope.pitch = function(pitch) {
@@ -24,48 +33,48 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
     var location = pitch;
     var call = 0;
 
-    if (location === 0) { //pitch outside
-      if (random < 0.039) { //SINGLE
+    if (location === 0) { //pitch outside high
+      if (random < 0.08) { //SINGLE
         var call = 1;
-      } else if (random < 0.051) { //DOUBLE
+      } else if (random < 0.09) { //DOUBLE
         var call = 2;
-      } else if (random < 0.054) { //TRIPLE
+      } else if (random < 0.095) { //TRIPLE
         var call = 3;
-      } else if (random < 0.060) { //HR
+      } else if (random < 0.10) { //HR
         var call = 4;
       } else if (random < 0.45) { //BALL
         var call = 5;
-      } else if (random < 0.87) { //STRIKE
+      } else if (random < 0.90) { //STRIKE
         var call = 6;
       } else { //FLY or GROUND-OUT
         var call = 7;
       }
     }
-    else if (location === 1) { //pitch middle
-      if (random < 0.049) { //SINGLE
+    else if (location === 1) { //pitch middle high
+      if (random < 0.07) { //SINGLE
         var call = 1;
-      } else if (random < 0.071) { //DOUBLE
+      } else if (random < 0.08) { //DOUBLE
         var call = 2;
-      } else if (random < 0.079) { //TRIPLE
+      } else if (random < 0.085) { //TRIPLE
         var call = 3;
-      } else if (random < 0.089) { //HR
+      } else if (random < 0.090) { //HR
         var call = 4;
-      } else if (random < 0.40) { //BALL
+      } else if (random < 0.50) { //BALL
         var call = 5;
-      } else if (random < 0.645) { //STRIKE
+      } else if (random < 0.85) { //STRIKE
         var call = 6;
       } else { //FLY or GROUND-OUT
         var call = 7;
       }
     }
-    else if (location === 2) { //pitch inside
-      if (random < 0.01) { //HBP
+    else if (location === 2) { //pitch inside high
+      if (random < 0.02) { //HBP
         var call = 0;
-      } else if (random < 0.049) { //SINGLE
+      } else if (random < 0.05) { //SINGLE
         var call = 1;
-      } else if (random < 0.061) { //DOUBLE
+      } else if (random < 0.06) { //DOUBLE
         var call = 2;
-      } else if (random < 0.064) { //TRIPLE
+      } else if (random < 0.065) { //TRIPLE
         var call = 3;
       } else if (random < 0.070) { //HR
         var call = 4;
@@ -77,35 +86,105 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
         var call = 7;
       }
     }
-    else if (location === 3) { //pitch middle
+    else if (location === 3) { //pitch outside middle
       if (random < 0.049) { //SINGLE
         var call = 1;
-      } else if (random < 0.071) { //DOUBLE
+      } else if (random < 0.09) { //DOUBLE
         var call = 2;
-      } else if (random < 0.079) { //TRIPLE
+      } else if (random < 0.095) { //TRIPLE
         var call = 3;
-      } else if (random < 0.089) { //HR
+      } else if (random < 0.10) { //HR
         var call = 4;
-      } else if (random < 0.40) { //BALL
+      } else if (random < 0.50) { //BALL
         var call = 5;
-      } else if (random < 0.645) { //STRIKE
+      } else if (random < 0.90) { //STRIKE
         var call = 6;
       } else { //FLY or GROUND-OUT
         var call = 7;
       }
     }
     else if (location === 4) { //pitch middle
+      if (random < 0.10) { //SINGLE
+        var call = 1;
+      } else if (random < 0.14) { //DOUBLE
+        var call = 2;
+      } else if (random < 0.16) { //TRIPLE
+        var call = 3;
+      } else if (random < 0.18) { //HR
+        var call = 4;
+      } else if (random < 0.70) { //STRIKE
+        var call = 6;
+      } else { //FLY or GROUND-OUT
+        var call = 7;
+      }
+    }
+    else if (location === 5) { //pitch inside middle
+      if (random < 0.03) { //HBP
+        var call = 0;
+      } else if (random < 0.06) { //SINGLE
+        var call = 1;
+      } else if (random < 0.065) { //DOUBLE
+        var call = 2;
+      } else if (random < 0.07) { //TRIPLE
+        var call = 3;
+      } else if (random < 0.075) { //HR
+        var call = 4;
+      } else if (random < 0.42) { //BALL
+        var call = 5;
+      } else if (random < 0.75) { //STRIKE
+        var call = 6;
+      } else { //FLY or GROUND-OUT
+        var call = 7;
+      }
+    }
+    else if (location === 6) { //pitch outside middle
       if (random < 0.049) { //SINGLE
         var call = 1;
-      } else if (random < 0.071) { //DOUBLE
+      } else if (random < 0.09) { //DOUBLE
         var call = 2;
-      } else if (random < 0.079) { //TRIPLE
+      } else if (random < 0.095) { //TRIPLE
         var call = 3;
-      } else if (random < 0.089) { //HR
+      } else if (random < 0.10) { //HR
         var call = 4;
-      } else if (random < 0.40) { //BALL
+      } else if (random < 0.50) { //BALL
         var call = 5;
-      } else if (random < 0.645) { //STRIKE
+      } else if (random < 0.90) { //STRIKE
+        var call = 6;
+      } else { //FLY or GROUND-OUT
+        var call = 7;
+      }
+    }
+    else if (location === 7) { //pitch middle
+      if (random < 0.07) { //SINGLE
+        var call = 1;
+      } else if (random < 0.08) { //DOUBLE
+        var call = 2;
+      } else if (random < 0.085) { //TRIPLE
+        var call = 3;
+      } else if (random < 0.1) { //HR
+        var call = 4;
+      } else if (random < 0.50) { //BALL
+        var call = 5;
+      } else if (random < 0.85) { //STRIKE
+        var call = 6;
+      } else { //FLY or GROUND-OUT
+        var call = 7;
+      }
+    }
+    else if (location === 8) { //pitch inside middle
+      if (random < 0.03) { //HBP
+        var call = 0;
+      } else if (random < 0.06) { //SINGLE
+        var call = 1;
+      } else if (random < 0.07) { //DOUBLE
+        var call = 2;
+      } else if (random < 0.09) { //TRIPLE
+        var call = 3;
+      } else if (random < 0.10) { //HR
+        var call = 4;
+      } else if (random < 0.42) { //BALL
+        var call = 5;
+      } else if (random < 0.90) { //STRIKE
         var call = 6;
       } else { //FLY or GROUND-OUT
         var call = 7;
