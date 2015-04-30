@@ -26,22 +26,29 @@ body {
   filter: FlipH;
   -ms-filter: "FlipH";
   z-index: -1;
+  opacity: 0.6;
+
 }
 
 .diamond {
   height: 300px;
   width: 300px;
   position: absolute;
-  top: 35%;
-  left: 15%;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  z-index: -1;
+  top: 25%;
+  left: 3%;
+  border-radius: 30px;
 }
+
+.first {
+  height: 80px;
+  width: 120px;
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  border-radius: 30px;
+}
+
+
 
 
 .btn-tall {

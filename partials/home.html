@@ -1,19 +1,19 @@
 <div class ="container text-center">
   <h1>BASEBALL!!</h1>
   <div>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall"></button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall"></button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall">1</button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall">2</button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall">3</button>
   </div>
   <div>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall"></button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall"></button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(3)" class="btn-tall">4</button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(4)" class="btn-tall">5</button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall">6</button>
   </div>
   <div>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall"></button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall"></button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall">7</button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall">8</button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(3)" class="btn-tall">9</button>
   </div>
 
   <div ng-show="BaseballFactory.gameover">
@@ -37,7 +37,17 @@
 </div>
 
 <div>
-  <img src='http://www.cadworxlive.com/imageCache/designer-246197.jpg' class="container-fluid diamond"> 
+</div>
+
+<div>
+  <img ng-show="BaseballFactory.emptybase" src='../img/field.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.firstbase" src='../img/field1.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.secondbase" src='../img/field2.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.thirdbase" src='../img/field3.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.firstsecondbase" src='../img/field12.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.firstthirdbase" src='../img/field13.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.secondthirdbase" src='../img/field23.jpg' class="container-fluid diamond">
+  <img ng-show="BaseballFactory.firstsecondthirdbase" src='../img/field123.jpg' class="container-fluid diamond">
 </div>
 
 </div>

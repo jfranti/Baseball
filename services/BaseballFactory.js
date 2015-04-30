@@ -19,9 +19,15 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
   factory.away_pitchcount = 0;
 
   //BASES
-  factory.firstbase = " ";
-  factory.secondbase = " ";
-  factory.thirdbase = " ";
+  factory.emptybase = 1;
+  factory.firstbase = 0;
+  factory.secondbase = 0;
+  factory.thirdbase = 0;
+  factory.firstsecondbase = 0;
+  factory.secondthirdbase = 0;
+  factory.firstthirdbase = 0;
+  factory.firstsecondthirdbase = 0;
+
 
   //REPORT
   factory.report = "PLAY BALL!";
@@ -43,36 +49,35 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
     factory.outs = (factory.outs + 1);
     factory.report = "FLY OUT!";
     factory.inningouts = (factory.inningouts + 1);
-    console.log("OUT");
   };
 
   factory.single = function() {
-    factory.firstbase = "X";
+    factory.firstbase = 1;
     factory.report = "A SINGLE!";
   };
 
   factory.double = function() {
-    factory.secondbase = "X";
+    factory.secondbase = 1;
     factory.report = "HE HITS A DOUBLE!";
   };
 
   factory.triple = function() {
-    factory.thirdbase = "X";
+    factory.thirdbase = 1;
     factory.report = "WHOA NELLY! A TRIPLE!";
   };
 
   factory.homerun_home = function() {
-    factory.firstbase = " ";
-    factory.secondbase = " ";
-    factory.thirdbase = " ";
+    factory.firstbase = 0;
+    factory.secondbase = 0;
+    factory.thirdbase = 0;
     factory.runs_hometeam = (factory.runs_hometeam + 1);
     factory.report = "GET UP! GET UP! GET OUTTA HERE AND GONE!!";
   };
 
   factory.homerun_away = function() {
-    factory.firstbase = " ";
-    factory.secondbase = " ";
-    factory.thirdbase = " ";
+    factory.firstbase = 0;
+    factory.secondbase = 0;
+    factory.thirdbase = 0;
     factory.runs_awayteam = (factory.runs_awayteam + 1);
     factory.report = "GET UP! GET UP! GET OUTTA HERE AND GONE!!";
   };
@@ -83,9 +88,14 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
   }
 
   factory.resetbases = function() {
-    factory.firstbase = " ";
-    factory.secondbase = " ";
-    factory.thirdbase = " ";
+    factory.firstbase = 0;
+    factory.secondbase = 0;
+    factory.thirdbase = 0;
+    factory.firstsecondbase = 0;
+    factory.secondthirdbase = 0;
+    factory.firstthirdbase = 0;
+    factory.firstsecondthirdbase = 0;
+
   }
 
   factory.strikeout_home = function() {
@@ -107,32 +117,32 @@ baseball.factory('BaseballFactory', function BaseballFactory() {
   }
 
   factory.advancebaserunners_home = function() {
-    if (factory.thirdbase === "X") {
+    if (factory.thirdbase === 1) {
       factory.runs_hometeam = factory.runs_hometeam + 1;
-      factory.thirdbase = " ";
+      factory.thirdbase = 0;
     };
-    if (factory.secondbase === "X") {
-      factory.thirdbase = "X";
-      factory.secondbase = " ";
+    if (factory.secondbase === 1) {
+      factory.thirdbase = 1;
+      factory.secondbase = 0;
     };
-    if (factory.firstbase === "X") {
-      factory.secondbase = "X";
-      factory.firstbase = " ";
+    if (factory.firstbase === 1) {
+      factory.secondbase = 1;
+      factory.firstbase = 0;
     };
   };
 
   factory.advancebaserunners_away = function() {
-    if (factory.thirdbase === "X") {
+    if (factory.thirdbase === 1) {
       factory.runs_awayteam = factory.runs_awayteam + 1;
-      factory.thirdbase = " ";
+      factory.thirdbase = 0;
     };
-    if (factory.secondbase === "X") {
-      factory.thirdbase = "X";
-      factory.secondbase = " ";
+    if (factory.secondbase === 1) {
+      factory.thirdbase = 1;
+      factory.secondbase = 0;
     };
-    if (factory.firstbase === "X") {
-      factory.secondbase = "X";
-      factory.firstbase = " ";
+    if (factory.firstbase === 1) {
+      factory.secondbase = 1;
+      factory.firstbase = 0;
     };
   };
 

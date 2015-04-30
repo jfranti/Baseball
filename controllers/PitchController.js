@@ -9,9 +9,9 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
     BaseballFactory.innings = 1;
     BaseballFactory.hits = 0;
     BaseballFactory.strikeouts = 0;
-    BaseballFactory.firstbase = " ";
-    BaseballFactory.secondbase = " ";
-    BaseballFactory.thirdbase = " ";
+    BaseballFactory.firstbase = 0;
+    BaseballFactory.secondbase = 0;
+    BaseballFactory.thirdbase = 0;
     BaseballFactory.report = "";
     BaseballFactory.gameover = 0;
     BaseballFactory.home_pitchcount = 0;
@@ -138,7 +138,7 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
         BaseballFactory.resetcount();
         BaseballFactory.hit_away();
       } else if (call === 4) {
-        if ((BaseballFactory.firstbase === "X") && (BaseballFactory.secondbase === "X") && (BaseballFactory.thirdbase === "X")) {
+        if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 1)) {
           BaseballFactory.advancebaserunners_away();
           BaseballFactory.advancebaserunners_away();
           BaseballFactory.advancebaserunners_away();
@@ -171,10 +171,32 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
       }
 
       if (BaseballFactory.balls >=4) { //WALK
-        BaseballFactory.advancebaserunners_away();
-        BaseballFactory.single();
-        BaseballFactory.resetcount();
-        BaseballFactory.report = "He walked him.";
+        if (BaseballFactory.firstbase === 0) {
+          BaseballFactory.single();
+          BaseballFactory.resetcount();
+          BaseballFactory.report = "He walked him.";
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 0) && (BaseballFactory.thirdbase === 0)){
+          BaseballFactory.advancebaserunners_away();
+          BaseballFactory.single();
+          BaseballFactory.resetcount();
+          BaseballFactory.report = "He walked him with a man on.";
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 0)){
+          BaseballFactory.advancebaserunners_away();
+          BaseballFactory.single();
+          BaseballFactory.resetcount();
+          BaseballFactory.report = "He walked the bases LOADED!";
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 0) && (BaseballFactory.thirdbase === 1)){
+          BaseballFactory.firstbase = 1;
+          BaseballFactory.secondbase = 1;
+          BaseballFactory.thirdbase = 1;
+          BaseballFactory.resetcount();
+          BaseballFactory.report = "He walked the bases LOADED!";
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 1)){
+          BaseballFactory.advancebaserunners_away();
+          BaseballFactory.single();
+          BaseballFactory.resetcount();
+          BaseballFactory.report = "He walked in a RUN!";
+        }
       } //END AWAY HALF
 
     } else if (BaseballFactory.atbat === "HOME") { //HOME HALF OF INNING
@@ -202,7 +224,7 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
         BaseballFactory.resetcount();
         BaseballFactory.hit_home();
       } else if (call === 4) {
-        if ((BaseballFactory.firstbase === "X") && (BaseballFactory.secondbase === "X") && (BaseballFactory.thirdbase === "X")) {
+        if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 1)) {
           BaseballFactory.advancebaserunners_home();
           BaseballFactory.advancebaserunners_home();
           BaseballFactory.advancebaserunners_home();
@@ -236,27 +258,27 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
       }
 
       if (BaseballFactory.balls >=4) { //WALK
-        if (BaseballFactory.firstbase === " ") {
+        if (BaseballFactory.firstbase === 0) {
           BaseballFactory.single();
           BaseballFactory.resetcount();
           BaseballFactory.report = "He walked him.";
-        } else if ((BaseballFactory.firstbase === "X") && (BaseballFactory.secondbase === " ") && (BaseballFactory.thirdbase === " ")){
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 0) && (BaseballFactory.thirdbase === 0)){
           BaseballFactory.advancebaserunners_home();
           BaseballFactory.single();
           BaseballFactory.resetcount();
           BaseballFactory.report = "He walked him with a man on.";
-        } else if ((BaseballFactory.firstbase === "X") && (BaseballFactory.secondbase === "X") && (BaseballFactory.thirdbase === " ")){
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 0)){
           BaseballFactory.advancebaserunners_home();
           BaseballFactory.single();
           BaseballFactory.resetcount();
           BaseballFactory.report = "He walked the bases LOADED!";
-        } else if ((BaseballFactory.firstbase === "X") && (BaseballFactory.secondbase === " ") && (BaseballFactory.thirdbase === "X")){
-          BaseballFactory.firstbase = "X";
-          BaseballFactory.secondbase = "X";
-          BaseballFactory.thirdbase = "X";
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 0) && (BaseballFactory.thirdbase === 1)){
+          BaseballFactory.firstbase = 1;
+          BaseballFactory.secondbase = 1;
+          BaseballFactory.thirdbase = 1;
           BaseballFactory.resetcount();
           BaseballFactory.report = "He walked the bases LOADED!";
-        } else if ((BaseballFactory.firstbase === "X") && (BaseballFactory.secondbase === "X") && (BaseballFactory.thirdbase === "X")){
+        } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 1)){
           BaseballFactory.advancebaserunners_home();
           BaseballFactory.single();
           BaseballFactory.resetcount();
@@ -276,6 +298,7 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
       BaseballFactory.resetbases();
       BaseballFactory.resetcount();
       BaseballFactory.outs = 0;
+      BaseballFactory.emptybase = 1;
     }
 
     if (BaseballFactory.inningouts >= 6) { //END OF INNING
@@ -283,12 +306,35 @@ baseball.controller('PitchCtrl', function PitchCtrl($scope, BaseballFactory) {
       BaseballFactory.awayhalf();
       BaseballFactory.resetbases();
       BaseballFactory.inningouts = 0;
+      BaseballFactory.emptybase = 1;
     }
 
-    if (BaseballFactory.innings > 1) { //END OF GAME
+    if (BaseballFactory.innings > 9) { //END OF GAME
       BaseballFactory.gameover = 1;
     }
 
+    if ((BaseballFactory.firstbase != 0) || (BaseballFactory.secondbase != 0) || (BaseballFactory.thirdbase != 0)) {
+      BaseballFactory.emptybase = 0;
+    }
+
+    BaseballFactory.firstsecondbase = 0;
+    BaseballFactory.secondthirdbase = 0;
+    BaseballFactory.firstthirdbase = 0;
+    BaseballFactory.firstsecondthirdbase = 0;
+
+    if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 0)) {
+      BaseballFactory.firstsecondbase = 1;
+    } else if ((BaseballFactory.firstbase === 0) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 1)) {
+      BaseballFactory.secondthirdbase = 1;
+    } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 0) && (BaseballFactory.thirdbase === 1)) {
+      BaseballFactory.firstthirdbase = 1;
+    } else if ((BaseballFactory.firstbase === 1) && (BaseballFactory.secondbase === 1) && (BaseballFactory.thirdbase === 1)) {
+      BaseballFactory.firstsecondthirdbase = 1;
+    } else if ((BaseballFactory.firstbase === 0) && (BaseballFactory.secondbase === 0) && (BaseballFactory.thirdbase === 0)) {
+      BaseballFactory.emptybase = 1;
+    }
   }
+
+
 
 });
