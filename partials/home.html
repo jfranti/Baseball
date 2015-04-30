@@ -1,12 +1,43 @@
 <div class ="container text-center">
   <h1>BASEBALL!!</h1>
-  <div class="form-group">
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)">Pitch Outside</button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)">Pitch Middle</button>
-    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)">Pitch Inside</button>
-    <p ng-show="BaseballFactory.gameover">
-      GAME OVER.
-    </p>
-    <button ng-show="BaseballFactory.gameover" ng-click="newgame()" class='btn btn-success'>NEW GAME</button>
+  <div>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall"></button>
   </div>
+  <div>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall"></button>
+  </div>
+  <div>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(0)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(1)" class="btn-tall"></button>
+    <button ng-hide="BaseballFactory.gameover" type='submit' ng-click="pitch(2)" class="btn-tall"></button>
+  </div>
+
+  <div ng-show="BaseballFactory.gameover">
+    <div class="finalscore">
+      <p>
+        GAME OVER.
+      </p>
+      <p>
+        BLUE JAYS: {{ BaseballFactory.runs_awayteam }}
+      </p>
+      <p>
+        BREWERS: {{ BaseballFactory.runs_hometeam }}
+      </p>
+    </div>
+  </div>
+  <button ng-show="BaseballFactory.gameover" ng-click="newgame()" class='btn btn-success'>NEW GAME</button>
+</div>
+
+<div>
+  <img src='http://www.clipartbest.com/cliparts/LcK/An9/LcKAn9pca.png' class="container-fluid batter">
+</div>
+
+<div>
+  <img src='http://www.cadworxlive.com/imageCache/designer-246197.jpg' class="container-fluid diamond"> 
+</div>
+
 </div>
