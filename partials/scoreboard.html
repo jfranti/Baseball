@@ -1,61 +1,37 @@
-<!-- <div>
-  <p>
-    RUNS: {{ BaseballFactory.runs }}
-  </p>
-  <p>
-    PITCHCOUNT: {{ BaseballFactory.balls }} - {{ BaseballFactory.strikes }}
-  </p>
-  <p>
-    OUTS: {{ BaseballFactory.outs }}
-  </p>
-  <p>
-    INNING: {{ BaseballFactory.innings }}
-  </p>
-  <p>
-    STRIKEOUTS: {{ BaseballFactory.strikeouts }}, HITS: {{ BaseballFactory.hits }}
-  </p>
-  <p class="text-center">
-    {{BaseballFactory.secondbase}}
-  </p>
-  <p class="text-center">
-    {{BaseballFactory.thirdbase}} _______
-    {{BaseballFactory.firstbase}}
-  </p>
-  <p class="text-center">
-    0
-  </p>
-</div> -->
 <div class='container-fluid'>
-<div class="wrapper">
-  <div class="push"></div>
-</div>
+  <div class="wrapper">
+    <div class="push"></div>
+  </div>
   <div class='footer'>
     <table class='table-responsive'>
       <table class='table table-striped'>
         <thead>
           <tr>
             <th>Team<th>
-            <th>Runs</th>
-            <th>Hits</th>
-            <th>Balls</th>
-            <th>Strikes</th>
-            <th>Outs</th>
-            <th>Inning</th>
-            <th>Strikeouts</th>
+              <th>Runs</th>
+              <th>Hits</th>
+              <th>Strikeouts</th>
+              <th>Pitchcount</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td scope='row'>{{ BaseballFactory.hometeam }}</td>
+              <td scope='row'><span ng-hide="BaseballFactory.atbat == 'HOME'" style="color:red">X</span>{{ BaseballFactory.awayteam }}</td>
               <td></td>
-              <td> {{ BaseballFactory.runs }} </td>
-              <td> {{ BaseballFactory.hits }} </td>
-              <td> {{ BaseballFactory.balls }} </td>
-              <td> {{ BaseballFactory.strikes }} </td>
-              <td> {{ BaseballFactory.outs }} </td>
-              <td> {{ BaseballFactory.innings }} </td>
-              <td> {{ BaseballFactory.strikeouts }} </td>
+              <td> {{ BaseballFactory.runs_awayteam }} </td>
+              <td> {{ BaseballFactory.hits_awayteam }} </td>
+              <td> {{ BaseballFactory.strikeouts_awayteam }} </td>
+              <td> {{ BaseballFactory.away_pitchcount }} </td>
             </tr>
+            <tr>
+              <td scope='row'><span ng-show="BaseballFactory.atbat == 'HOME'" style="color:red">X</span>{{ BaseballFactory.hometeam }}</td>
+              <td></td>
+              <td> {{ BaseballFactory.runs_hometeam }} </td>
+              <td> {{ BaseballFactory.hits_hometeam }} </td>
+              <td> {{ BaseballFactory.strikeouts_hometeam }} </td>
+              <td> {{ BaseballFactory.home_pitchcount }} </td>
+            </tr>
+
           </tbody>
         </table>
       </table>

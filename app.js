@@ -16,7 +16,12 @@ baseball.config(function($stateProvider) {
       'report': {
         templateUrl: 'partials/report.html',
         controller: 'ScoreboardCtrl'
-      }
+      },
+      'count': {
+        templateUrl: 'partials/count.html',
+        controller: 'ScoreboardCtrl'
+      },
+
     }
   });
 });
