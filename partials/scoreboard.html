@@ -4,7 +4,7 @@
   </div>
   <div class='footer'>
     <table class='table-responsive'>
-      <table class='table'>
+      <table class='table table-curved'>
         <thead>
           <tr>
             <th>Team<th>
@@ -17,7 +17,7 @@
           </thead>
           <tbody>
             <tr class="BlueJays">
-              <th><span ng-hide="BaseballFactory.atbat == 'HOME'" style="color:red">X </span><img src="http://www.printyourbrackets.com/mlb-logos/toronto-blue-jays-logo.png"></th>
+              <td><span ng-hide="BaseballFactory.atbat == 'HOME'" style="color:red">X </span><img src="http://www.printyourbrackets.com/mlb-logos/toronto-blue-jays-logo.png"></td>
               <td scope='row'>{{ BaseballFactory.awayteam }}</td>
               <td></td>
               <td> {{ BaseballFactory.runs_awayteam }} </td>
@@ -26,7 +26,7 @@
               <td> {{ BaseballFactory.away_pitchcount }} </td>
             </tr>
             <tr class="Brewers">
-              <th><span ng-show="BaseballFactory.atbat == 'HOME'" style="color:red">X</span><img src="http://www.printyourbrackets.com/mlb-logos/milwaukee-brewers-logo.png" style="width:75px"></th>
+              <td><span ng-show="BaseballFactory.atbat == 'HOME'" style="color:red">X</span><img src="http://www.printyourbrackets.com/mlb-logos/milwaukee-brewers-logo.png" style="width:75px"></td>
               <td scope='row'>{{ BaseballFactory.hometeam }}</td>
               <td></td>
               <td> {{ BaseballFactory.runs_hometeam }} </td>
